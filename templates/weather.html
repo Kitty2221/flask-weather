@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Weather app</title>
+</head>
+
+
+<h1 style="text-align:center">Weather in three cities at one time &#127774;&#127783; &#127785; </h1>
+
+<form class="pure-form" action="/" method="POST">
+    <input type="text" name="city1" value="{{ request.form['city1'] }}" placeholder="Enter city 1"/>
+    <input type="text" name="city2" value="{{ request.form['city2'] }}" placeholder="Enter city 2"/>
+    <input type="text" name="city3" value="{{ request.form['city3'] }}" placeholder="Enter city 3"/>
+	<button type="submit" class="pure-button pure-button-primary">Show Weather</button>
+
+</form>
+
+{% if error %}
+    <p class='alert'>{{ error }}</p>
+{% elif data %}
+    <table class="pure-table">
+        <tr>
+            <th>City</th>
+            <th>Weather now</th>
+        </tr>
+   {% for d in data %}
+            <tr>
+                <td>{{ d['location'] }} </td>
+                <td>{{ d['current']  }} </td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endif %}
