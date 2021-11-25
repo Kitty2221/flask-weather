@@ -1,0 +1,44 @@
+body {
+    background-image: url("http://w3programmers.com/bangla/wp-content/uploads/2018/12/css-backgrounds.jpg");
+	background-repeat: no-repeat;
+	background-size: 2000px;
+}
+
+form {
+	margin-left: 25%;
+    margin-right:25%;
+    width: 50%;
+    text-align: center;
+}
+
+table {
+	table-layout: fixed;
+	border-collapse: collapse;
+	overflow: hidden;
+	box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+th, td {
+	padding: 15px;
+	background-color: rgba(255,255,255,0.2);
+	color: #fff;
+	letter-spacing: 1px;
+}
+
+th {
+	text-align: center;
+	font-family: 'Rock Salt', cursive;
+}
+
+tr {
+	border-bottom: 1pt solid #ddd;
+	font-size: large;
+}
+
+button {
+	width: 40%;
+	margin-left: 27%;
+	margin-right: 30%;
+	margin-top: 20px;
+	margin-block-end: 20px;
+}
